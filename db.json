@@ -1,0 +1,29 @@
+{
+  "prestadores": [
+    {
+      "id": "1",
+      "nomeFantasia": "Selma Cabelos",
+      "especialidade": "cabeleireira"
+    },
+    {
+      "id": "2",
+      "nomeFantasia": "Thiago Barbeiro",
+      "especialidade": "Barbearia"
+    },
+    {
+      "id": "IM650BJ",
+      "nomeFantasia": "Augusto Barbeiro",
+      "especialidade": "Barbearia"
+    },
+    {
+      "id": "aD87mmA",
+      "nomeFantasia": "Gustavo Manicure",
+      "especialidade": "Unhas"
+    },
+    {
+      "id": "Z3VcOYo",
+      "nomeFantasia": "Vai Serginho",
+      "especialidade": "Massagem"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<mat-card class="card-cadastro">
+    <mat-card-content>
+      <!-- <mat-form-field>
+        <mat-label>Id</mat-label>
+        <input matInput [(ngModel)]="prestadorAtual.id">
+      </mat-form-field> -->
+      <mat-form-field>
+        <mat-label>Nome fantasia</mat-label>
+        <input matInput [(ngModel)]="prestadorAtual.nomeFantasia">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Especialidade</mat-label>
+        <input matInput [(ngModel)]="prestadorAtual.especialidade"><br>
+      </mat-form-field>
+    </mat-card-content>
+  
+      <button mat-raised-button (click)="inserirOuAtualizarPrestador()">{{nomeBotao}}</button>
+  </mat-card>
