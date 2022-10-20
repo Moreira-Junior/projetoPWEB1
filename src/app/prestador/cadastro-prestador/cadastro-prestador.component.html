@@ -12,6 +12,18 @@
         <mat-label>Especialidade</mat-label>
         <input matInput [(ngModel)]="prestadorAtual.especialidade"><br>
       </mat-form-field>
+      <mat-form-field>
+        <mat-label>Avatar</mat-label>
+        <input matInput [(ngModel)]="prestadorAtual.avatar"><br>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Foto</mat-label>
+        <input matInput [(ngModel)]="prestadorAtual.foto"><br>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Servicos</mat-label>
+        <input matInput [(ngModel)]="prestadorAtual.servicos"><br>
+      </mat-form-field>
     </mat-card-content>
   
       <button mat-raised-button (click)="inserirOuAtualizarPrestador()">{{nomeBotao}}</button>

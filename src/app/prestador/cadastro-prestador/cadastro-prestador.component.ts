@@ -16,7 +16,7 @@ export class CadastroPrestadorComponent implements OnInit {
     nomeBotao = 'Inserir';
 
     constructor(private rotaAtual: ActivatedRoute, private prestadorService: PrestadorService) {
-    this.prestadorAtual = new Prestador('', '', '');
+    this.prestadorAtual = new Prestador('', '', '','','','');
     if (rotaAtual.snapshot.paramMap.has('id')) {
       const idParaEdicao = rotaAtual.snapshot.paramMap.get('id');
       if (idParaEdicao) {
@@ -37,7 +37,7 @@ export class CadastroPrestadorComponent implements OnInit {
       this.prestadorService.inserir(this.prestadorAtual).subscribe(
         prestadorInserido => console.log(prestadorInserido)
       );
-      this.prestadorAtual = new Prestador('', '', '');
+      this.prestadorAtual = new Prestador('', '', '','','','');
     } else {
       this.prestadorService.atualizar(this.prestadorAtual).subscribe(
         prestadorAtualizado => console.log(prestadorAtualizado)
@@ -49,6 +49,19 @@ export class CadastroPrestadorComponent implements OnInit {
     this.prestadorAtual.nomeFantasia = novoNome;
   }
 
+  onFileSelected() {
+    const inputNode: any = document.querySelector('#file');
+  
+    if (typeof (FileReader) !== 'undefined') {
+      const reader = new FileReader();
+  
+      reader.onload = (e: any) => {
+        this.prestadorAtual.avatar = e.target.result;
+      };
+  
+      reader.readAsArrayBuffer(inputNode.files[0]);
+    }
+  }
   
 
 }

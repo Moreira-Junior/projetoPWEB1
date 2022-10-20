@@ -16,7 +16,15 @@
     max-width: 400px;
   }
   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  .avatar-image {
+    // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
+    border-radius: 50%;
+    height: auto;
+    max-width: 130%;
+    margin: auto;
+  }
+
+  .foto-image{
+    height: 150px;
   }

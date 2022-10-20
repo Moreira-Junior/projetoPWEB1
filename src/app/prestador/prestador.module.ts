@@ -13,13 +13,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FlexModule} from '@angular/flex-layout';
+import { CadastroListagemComponent } from './cadastro-listagem/cadastro-listagem.component';
 
 
 
 @NgModule({
   declarations: [
     CadastroPrestadorComponent,
-    ListagemPrestadorComponent
+    ListagemPrestadorComponent,
+    CadastroListagemComponent
   ],
   imports: [
     CommonModule,

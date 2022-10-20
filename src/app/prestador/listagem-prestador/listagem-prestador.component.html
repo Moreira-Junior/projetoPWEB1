@@ -31,14 +31,14 @@
   <div fxLayout="row wrap" fxLayout.lt-md="column">
     <mat-card fxFlex="20" *ngFor="let prestador of prestadores" class="example-card card-prestadores">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar class="example-header-image"><img mat-card-image [src]=prestador.avatar class="avatar-image"></div>
           <mat-card-title class="tipografia-card">{{prestador.nomeFantasia}}</mat-card-title>
           <mat-card-subtitle>{{prestador.especialidade}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image [src]=prestador.foto class="foto-image">
       <mat-card-content>
         <p>
-          {{prestador.nomeFantasia}} {{prestador.nomeFantasia}} {{prestador.especialidade}}
+          {{prestador.servicos}}
         </p>
       </mat-card-content>
       <mat-card-actions>
