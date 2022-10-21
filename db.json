@@ -39,6 +39,14 @@
       "avatar": "assets/avatar-prestadores/194938.png",
       "foto": "assets/fotos-prestadores/massagem.jpg",
       "servicos": ""
+    },
+    {
+      "id": "cR0GcCi",
+      "nomeFantasia": "MarqueAgens",
+      "especialidade": "Maquiagem",
+      "avatar": "assets/avatar-prestadores/194938.png",
+      "foto": "assets/fotos-prestadores/maquiadora.jpg",
+      "servicos": "Faz maquiagem"
     }
   ]
 }

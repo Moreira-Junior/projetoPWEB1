@@ -49,8 +49,8 @@ export class CadastroPrestadorComponent implements OnInit {
     this.prestadorAtual.nomeFantasia = novoNome;
   }
 
-  onFileSelected() {
-    const inputNode: any = document.querySelector('#file');
+  selecaoDeArquivo() {
+    const inputNode: any = document.querySelector('.file');
   
     if (typeof (FileReader) !== 'undefined') {
       const reader = new FileReader();
