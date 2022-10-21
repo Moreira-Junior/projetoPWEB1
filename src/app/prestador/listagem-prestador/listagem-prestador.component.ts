@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Prestador } from 'src/app/shared/modelo/prestador';
-import { PrestadorService } from 'src/app/shared/servicos/prestador-service';
+import { Prestador } from '../../shared/modelo/prestador';
+import { PrestadorService } from '../../shared/servicos/prestador-service';
 
 @Component({
   selector: 'app-listagem-prestador',
