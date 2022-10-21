@@ -16,7 +16,7 @@ export class CadastroPrestadorComponent implements OnInit {
     nomeBotao = 'Inserir';
 
     constructor(private rotaAtual: ActivatedRoute, private prestadorService: PrestadorService) {
-    this.prestadorAtual = new Prestador('', '', '','','','');
+    this.prestadorAtual = new Prestador();
     if (rotaAtual.snapshot.paramMap.has('id')) {
       const idParaEdicao = rotaAtual.snapshot.paramMap.get('id');
       if (idParaEdicao) {
