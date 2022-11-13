@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PrestadorService {
 
-  URL_Prestadores = 'http://localhost:3000/prestadores';
+  URL_Prestadores = 'http://jsonserver:3000/prestadores';
 
   constructor(private clienteHttp: HttpClient) { }
 
