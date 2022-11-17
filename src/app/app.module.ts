@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout/layout.module';
 import { PrestadorModule } from './prestador/prestador.module';
+import { FirestoreModule } from './firestore/firestore.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PrestadorModule } from './prestador/prestador.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
-    PrestadorModule
+    PrestadorModule,
+    FirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

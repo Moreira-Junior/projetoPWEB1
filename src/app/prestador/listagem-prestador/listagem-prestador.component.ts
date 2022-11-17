@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PrestadorFirestoreService } from 'src/app/shared/servicos/prestador-firestore.service';
 import { Prestador } from '../../shared/modelo/prestador';
-import { PrestadorService } from '../../shared/servicos/prestador-service';
 
 @Component({
   selector: 'app-listagem-prestador',
@@ -12,7 +12,7 @@ export class ListagemPrestadorComponent implements OnInit {
 
   prestadores: Prestador[]
 
-  constructor(private roteador: Router, private prestadorService: PrestadorService) {
+  constructor(private roteador: Router, private prestadorService: PrestadorFirestoreService) {
     this.prestadores = new Array<Prestador>();
   }
 
@@ -23,16 +23,18 @@ export class ListagemPrestadorComponent implements OnInit {
   }
 
   removerPrestador(prestadorARemover: Prestador): void {
-    this.prestadorService.apagar(prestadorARemover.id).subscribe(
-      removido => {
-        console.log(removido);
-        const indxprestador = this.prestadores.findIndex(u => u.id === prestadorARemover.id);
-
-        if (indxprestador > -1) {
-          this.prestadores.splice(indxprestador, 1);
+    if(prestadorARemover.id){
+      this.prestadorService.apagar(prestadorARemover.id).subscribe(
+        removido => {
+          console.log(removido);
+          const indxprestador = this.prestadores.findIndex(u => u.id === prestadorARemover.id);
+  
+          if (indxprestador > -1) {
+            this.prestadores.splice(indxprestador, 1);
+          }
+  
         }
-
-      }
-    );
-  }
+      );
+    }
+    }
 }

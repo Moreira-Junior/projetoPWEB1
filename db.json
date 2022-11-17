@@ -9,27 +9,11 @@
       "servicos": "corta cabelo"
     },
     {
-      "id": "2",
-      "nomeFantasia": "Thiago Barbeiro",
-      "especialidade": "Barbearia",
-      "avatar": "assets/avatar-prestadores/man-avatar-icon-free-vector.jpg",
-      "foto": "assets/fotos-prestadores/barbearia1.jpg",
-      "servicos": "Corta cabelo, faz barba"
-    },
-    {
       "id": "IM650BJ",
       "nomeFantasia": "Augusto Barbeiro",
       "especialidade": "Barbearia",
       "avatar": "assets/avatar-prestadores/147144.png",
       "foto": "assets/fotos-prestadores/barbearia2.jpeg",
-      "servicos": ""
-    },
-    {
-      "id": "aD87mmA",
-      "nomeFantasia": "Gustavo Manicure",
-      "especialidade": "Unhas",
-      "avatar": "assets/avatar-prestadores/download.png",
-      "foto": "assets/fotos-prestadores/manicure.jpg",
       "servicos": ""
     },
     {
@@ -39,14 +23,6 @@
       "avatar": "assets/avatar-prestadores/194938.png",
       "foto": "assets/fotos-prestadores/massagem.jpg",
       "servicos": ""
-    },
-    {
-      "id": "mrjjzLp",
-      "nomeFantasia": "MaquiArte",
-      "especialidade": "Maquiagem",
-      "avatar": "assets/avatar-prestadores/194938.png",
-      "foto": "assets/fotos-prestadores/maquiadora.jpg",
-      "servicos": "Faz maquiagem e outras coisas"
     }
   ]
 }
