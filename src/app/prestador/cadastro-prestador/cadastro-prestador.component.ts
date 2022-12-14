@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PrestadorFirestoreService } from 'src/app/shared/servicos/prestador-firestore.service';
+import { PrestadorService } from 'src/app/shared/servicos/prestador-service';
 import { Prestador } from '../../shared/modelo/prestador';
 
 @Component({
@@ -15,7 +16,7 @@ export class CadastroPrestadorComponent implements OnInit {
     inserindo = true;
     nomeBotao = 'Inserir';
 
-    constructor(private rotaAtual: ActivatedRoute, private prestadorService: PrestadorFirestoreService) {
+    constructor(private rotaAtual: ActivatedRoute, private prestadorService: PrestadorService, private roteador: Router) {
     this.prestadorAtual = new Prestador();
     if (rotaAtual.snapshot.paramMap.has('id')) {
       const idParaEdicao = rotaAtual.snapshot.paramMap.get('id');
@@ -35,12 +36,12 @@ export class CadastroPrestadorComponent implements OnInit {
   inserirOuAtualizarPrestador() {
     if (this.inserindo) {
       this.prestadorService.inserir(this.prestadorAtual).subscribe(
-        prestadorInserido => console.log(prestadorInserido)
+        prestadorInserido => this.roteador.navigate(['listagemprestadores'])
       );
       this.prestadorAtual = new Prestador('');
     } else {
       this.prestadorService.atualizar(this.prestadorAtual).subscribe(
-        prestadorAtualizado => console.log(prestadorAtualizado)
+        prestadorAtualizado => this.roteador.navigate(['listagemprestadores'])
       )
     }
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PrestadorFirestoreService } from 'src/app/shared/servicos/prestador-firestore.service';
+import { PrestadorService } from 'src/app/shared/servicos/prestador-service';
 import { Prestador } from '../../shared/modelo/prestador';
 
 @Component({
@@ -12,7 +13,7 @@ export class ListagemPrestadorComponent implements OnInit {
 
   prestadores: Prestador[]
 
-  constructor(private roteador: Router, private prestadorService: PrestadorFirestoreService) {
+  constructor(private roteador: Router, private prestadorService: PrestadorService) {
     this.prestadores = new Array<Prestador>();
   }
 
