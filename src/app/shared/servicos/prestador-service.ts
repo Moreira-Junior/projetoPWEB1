@@ -34,4 +34,7 @@ export class PrestadorService {
     return this.clienteHttp.get<Prestador[]>(this.URL_Prestadores);
   }
 
+  listarComFiltroDeNome(filtro: string): Observable<Prestador[]> {
+    return this.clienteHttp.get<Prestador[]>(`${this.URL_Prestadores}/nome/${filtro}`);
+  }
 }

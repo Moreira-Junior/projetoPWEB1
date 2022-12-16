@@ -1,3 +1,13 @@
+<div class="center">
+  <mat-form-field class="example-form-field">
+    <mat-label>Filtro</mat-label>
+    <input #inputValue matInput [(ngModel)]="filtro" (change)="filtrarNome(inputValue.value)">
+    <button *ngIf="filtro" matSuffix mat-icon-button aria-label="Clear" (click)="limparFiltro()">
+      <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+</div>
+
 <div class="listagemPrestadores">
   <p>
     <mat-icon [matBadge]="prestadores.length" matBadgeColor="primary">group</mat-icon>

@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     RouterModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     MenuComponent

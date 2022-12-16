@@ -1,4 +1,19 @@
 .menu{
     margin: 1%;
-    background-color: #4B0082;
+    background-color: #a0aadf;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.filters {
+    mat-form-field {
+        div.mat-form-field-flex {
+            align-items: flex-end;
+        }
+
+        div.mat-form-field-prefix {
+            padding-right: 12px !important;
+        }
+    }
 }

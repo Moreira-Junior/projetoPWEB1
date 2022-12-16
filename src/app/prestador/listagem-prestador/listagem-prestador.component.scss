@@ -1,7 +1,7 @@
 .card-prestadores {
     margin: 1%;
     width: 250px;
-    background-color: #8000DE;
+    background-color: #a0aadf;
   }
 
 .listagemPrestadores {
@@ -27,4 +27,9 @@
 
   .foto-image{
     height: 150px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
   }

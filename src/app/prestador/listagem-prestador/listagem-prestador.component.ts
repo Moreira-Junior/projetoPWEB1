@@ -12,9 +12,11 @@ import { Prestador } from '../../shared/modelo/prestador';
 export class ListagemPrestadorComponent implements OnInit {
 
   prestadores: Prestador[]
+  filtro: string;
 
   constructor(private roteador: Router, private prestadorService: PrestadorService) {
     this.prestadores = new Array<Prestador>();
+    this.filtro = "";
   }
 
   ngOnInit(): void {
@@ -37,5 +39,23 @@ export class ListagemPrestadorComponent implements OnInit {
         }
       );
     }
+  }
+
+  limparFiltro(){
+    this.filtro = "";
+    this.filtrarNome(this.filtro);
+  }
+
+  filtrarNome(filtro: string){
+    if(filtro != ""){
+      this.prestadorService.listarComFiltroDeNome(filtro).subscribe(
+        prestadoresRetornados => this.prestadores = prestadoresRetornados
+        );
     }
+    else {
+      this.prestadorService.listar().subscribe(
+        prestadoresRetornados => this.prestadores = prestadoresRetornados
+        );
+    }
+  }
 }
