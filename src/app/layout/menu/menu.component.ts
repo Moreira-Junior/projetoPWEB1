@@ -24,7 +24,6 @@ export class MenuComponent implements OnInit, DoCheck {
         );
       }
     }
-    console.log(this.usuarioAtual)
   }
   ngDoCheck(): void {
     

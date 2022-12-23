@@ -71,9 +71,4 @@ export class ListagemPrestadorComponent implements OnInit {
         );
     }
   }
-
-  abrirCard(){
-    console.log("abriu o card");
-    console.log(this.prestadores);
-  }
 }

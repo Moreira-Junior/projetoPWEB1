@@ -17,7 +17,7 @@
     Bem vindo, {{usuarioAtual.nome}}!
   </p>
   <div fxLayout="row wrap" fxLayout.lt-md="column">
-    <mat-card fxFlex="20" *ngFor="let prestador of prestadores" class="example-card card-prestadores" (click)="abrirCard()">
+    <mat-card fxFlex="20" *ngFor="let prestador of prestadores" class="example-card card-prestadores">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"><img mat-card-image [src]=prestador.avatar class="avatar-image"></div>
           <mat-card-title class="tipografia-card">{{prestador.nomeFantasia}}</mat-card-title>

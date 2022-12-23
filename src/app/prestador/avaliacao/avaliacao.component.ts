@@ -57,10 +57,8 @@ export class AvaliacaoComponent implements OnInit {
       "mensagemAvaliacao": this.conteudoMensagem,
       "avaliacao": this.value
     };
-    console.log(avaliacaoAEnviar);
     this.avaliacaoService.enviarAvaliacao(avaliacaoAEnviar).subscribe(
       avaliacaoInserida => {this.roteador.navigate(['/listagemprestadores', this.usuarioAtual.id])
-      console.log(avaliacaoInserida)
     }
     )
   }
