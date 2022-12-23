@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="center">
   <mat-form-field class="example-form-field">
     <mat-label>Filtro</mat-label>
@@ -12,8 +13,11 @@
   <p>
     <mat-icon [matBadge]="prestadores.length" matBadgeColor="primary">group</mat-icon>
   </p>
+  <p>
+    Bem vindo, {{usuarioAtual.nome}}!
+  </p>
   <div fxLayout="row wrap" fxLayout.lt-md="column">
-    <mat-card fxFlex="20" *ngFor="let prestador of prestadores" class="example-card card-prestadores">
+    <mat-card fxFlex="20" *ngFor="let prestador of prestadores" class="example-card card-prestadores" (click)="abrirCard()">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"><img mat-card-image [src]=prestador.avatar class="avatar-image"></div>
           <mat-card-title class="tipografia-card">{{prestador.nomeFantasia}}</mat-card-title>
@@ -22,15 +26,25 @@
       <img mat-card-image [src]=prestador.foto class="foto-image">
       <mat-card-content>
         <p>
-          {{prestador.servicos}}
+          <mat-icon  matBadgeColor="primary">location_on</mat-icon>
+          {{prestador.bairro}}
+        </p>
+        <p>
+          Nota: {{prestador.avaliacaoMedia}}
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-icon-button (click)="removerPrestador(prestador)">
+        <button mat-icon-button *ngIf="usuarioAtual.email == 'admin@admin.com'" (click)="removerPrestador(prestador)">
           <mat-icon>delete</mat-icon>
         </button>
-        <button mat-icon-button [routerLink]="['/editaprestador', prestador.id]">
+        <button mat-icon-button *ngIf="usuarioAtual.email == 'admin@admin.com'" [routerLink]="['/editaprestador', usuarioAtual.id, prestador.id]">
           <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button [routerLink]="['/chat', usuarioAtual.id, prestador.id]">
+          <mat-icon>chat</mat-icon>
+        </button>
+        <button mat-icon-button [routerLink]="['/avaliar', usuarioAtual.id, prestador.id]">
+          <mat-icon>grade</mat-icon>
         </button>
       </mat-card-actions>
     </mat-card>

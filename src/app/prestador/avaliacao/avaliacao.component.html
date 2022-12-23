@@ -1,0 +1,17 @@
+<mat-slider class="center" min="0" max="5" step="1" [(ngModel)]="value" showTickMarks discrete [displayWith]="formatLabel">
+    <input matSliderThumb>
+</mat-slider>
+
+<div class="center">
+    <mat-form-field class="example-form-field">
+      <mat-label>Mensagem</mat-label>
+      <input #inputValue matInput [(ngModel)]="conteudoMensagem">
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="enviarAvaliacao()">
+        <mat-icon>send</mat-icon>
+      </button>
+  </mat-form-field>
+</div>
+
+<button matSuffix mat-icon-button aria-label="Clear" [routerLink]="['/listagemprestadores', usuarioAtual.id]">
+    <mat-icon>arrow_back</mat-icon>
+</button>

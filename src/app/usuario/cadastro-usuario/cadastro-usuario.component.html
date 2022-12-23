@@ -1,0 +1,25 @@
+<div class="background">
+    <div class="row mx-0 center_div">
+      <div class="col-7 mt-5">
+        <form class="example-form row mx-5 mt-5">
+          <h1 class="center cadastro mb-5">Cadastro</h1>
+          <mat-form-field appearance="outline" color="white" >
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="usuarioAtual.nome" name="nome">
+          </mat-form-field>
+          <mat-form-field appearance="outline" >
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="usuarioAtual.email" name="email">
+          </mat-form-field>
+          <mat-form-field appearance="outline"  class="col">
+            <mat-label>Senha</mat-label>
+            <input matInput [(ngModel)]="usuarioAtual.senha" name="senha"><br>
+          </mat-form-field>
+  
+        </form>
+        <div class="d-flex justify-content-center mt-4">
+          <button class="botao center px-5" mat-raised-button color="primary" (click)="inserirUsuario()">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>

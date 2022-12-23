@@ -4,9 +4,12 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item [routerLink]="['/listagemprestadores']">Listar Prestadores</button>
-    <button mat-menu-item [routerLink]="['/cadastroprestador']">Cadastrar Prestador</button>
-    <button mat-menu-item [routerLink]="['/cadastrolistagemprestador']">Cadastro-Listagem</button>
+    <button mat-menu-item *ngIf="usuarioAtual.email == 'admin@admin.com'" [routerLink]="['/listagemprestadores']">Listar Prestadores</button>
+    <button mat-menu-item *ngIf="usuarioAtual.email == 'admin@admin.com'" [routerLink]="['/cadastroprestador', usuarioAtual.id]">Cadastrar Prestador</button>
+    <button mat-menu-item *ngIf="usuarioAtual.email == 'admin@admin.com'" [routerLink]="['/cadastrolistagemprestador']">Cadastro-Listagem</button>
+    <button mat-menu-item *ngIf="usuarioAtual.email == 'admin@admin.com'" [routerLink]="['/cadastrousuario']">Cadastro-Usuario</button>
+    <button mat-menu-item [routerLink]="['/loginusuario']">Login-Usuario</button>
+    <button mat-menu-item [routerLink]="['/']">Sair</button>
   </mat-menu>
 </mat-toolbar>
 </div>

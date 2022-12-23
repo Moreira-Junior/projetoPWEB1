@@ -1,0 +1,28 @@
+<div class="center">
+  {{prestadorAtual.nomeFantasia}}
+  
+  <ul *ngFor="let mensagem of mensagens">
+    <li>{{mensagem.conteudoMensagem}} - {{mensagem.enviadoPor}} - {{mensagem.dateStamp}} 
+      <button mat-icon-button [routerLink]="['/editarmensagem', usuarioAtual.id, prestadorAtual.id, mensagem.id]">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="removerMensagem(mensagem)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </li>
+  </ul>
+  
+  <div>
+    <mat-form-field class="example-form-field">
+      <mat-label>Mensagem</mat-label>
+      <input #inputValue matInput [(ngModel)]="conteudoMensagem">
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="enviarMensagem()">
+        <mat-icon>send</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
+<button matSuffix mat-icon-button aria-label="Clear" [routerLink]="['/listagemprestadores', usuarioAtual.id]">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+</div>

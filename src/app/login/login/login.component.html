@@ -1,0 +1,23 @@
+<div class="row mx-0 background" style="height:100vh">
+    <div class="col-4 login_form center_div">
+        <div class="w-75">
+            <h2 class="logo">BeautyMarket</h2>
+            <h1 class="bem_vindo">Bem vindo!</h1>
+            <form #form="ngForm">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input #email matInput type="email">
+                </mat-form-field>
+  
+                <mat-form-field appearance="outline" class="w-100 pb-0 mb-0">
+                    <mat-label>Senha</mat-label>
+                    <input #senha matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    </button>
+                </mat-form-field>
+                <p routerLink="/cadastrousuario" style="cursor:pointer">Ainda não é inscrito?        <span class="ml-5">Cadastre-se</span></p>
+                <button mat-flat-button class="primary_button w-100" (click)="auth(email.value, senha.value)" type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+  </div>

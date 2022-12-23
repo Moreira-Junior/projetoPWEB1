@@ -14,6 +14,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FlexModule} from '@angular/flex-layout';
 import { CadastroListagemComponent } from './cadastro-listagem/cadastro-listagem.component';
+import { ChatComponent } from './chat/chat.component';
+import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
+import {MatSliderModule} from '@angular/material/slider';
+import { EditarMensagemComponent } from './editar-mensagem/editar-mensagem.component';
+import { LayoutModule } from '../layout/layout.module';
 
 
 
@@ -21,7 +26,10 @@ import { CadastroListagemComponent } from './cadastro-listagem/cadastro-listagem
   declarations: [
     CadastroPrestadorComponent,
     ListagemPrestadorComponent,
-    CadastroListagemComponent
+    CadastroListagemComponent,
+    ChatComponent,
+    AvaliacaoComponent,
+    EditarMensagemComponent
   ],
   imports: [
     CommonModule,
@@ -36,10 +44,15 @@ import { CadastroListagemComponent } from './cadastro-listagem/cadastro-listagem
     FlexModule,
     RouterModule,
     HttpClientModule,
+    MatSliderModule,
+    LayoutModule
   ],
   exports: [
     CadastroPrestadorComponent,
-    ListagemPrestadorComponent
+    ListagemPrestadorComponent,
+    ChatComponent,
+    AvaliacaoComponent,
+    EditarMensagemComponent
   ]
 })
 export class PrestadorModule { }

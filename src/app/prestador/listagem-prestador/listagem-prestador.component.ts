@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Avaliacao } from 'src/app/shared/modelo/avaliacao';
+import { Usuario } from 'src/app/shared/modelo/usuario';
 import { PrestadorFirestoreService } from 'src/app/shared/servicos/prestador-firestore.service';
 import { PrestadorService } from 'src/app/shared/servicos/prestador-service';
+import { UsuarioService } from 'src/app/shared/servicos/usuario.service';
 import { Prestador } from '../../shared/modelo/prestador';
 
 @Component({
@@ -11,12 +14,22 @@ import { Prestador } from '../../shared/modelo/prestador';
 })
 export class ListagemPrestadorComponent implements OnInit {
 
+  usuarioAtual: Usuario;
   prestadores: Prestador[]
   filtro: string;
 
-  constructor(private roteador: Router, private prestadorService: PrestadorService) {
+  constructor(private roteador: Router, private prestadorService: PrestadorService, private usuarioService: UsuarioService, private rotaAtual: ActivatedRoute) {
     this.prestadores = new Array<Prestador>();
+    this.usuarioAtual = new Usuario();
     this.filtro = "";
+    if (rotaAtual.snapshot.paramMap.has('id')) {
+      const idParaEdicao = rotaAtual.snapshot.paramMap.get('id');
+      if(idParaEdicao){
+        usuarioService.pesquisarPorId(idParaEdicao).subscribe(
+          usuarioEncontrado => this.usuarioAtual = usuarioEncontrado
+        );
+      }
+    }
   }
 
   ngOnInit(): void {
@@ -57,5 +70,10 @@ export class ListagemPrestadorComponent implements OnInit {
         prestadoresRetornados => this.prestadores = prestadoresRetornados
         );
     }
+  }
+
+  abrirCard(){
+    console.log("abriu o card");
+    console.log(this.prestadores);
   }
 }
